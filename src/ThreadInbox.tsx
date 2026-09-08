@@ -4,7 +4,7 @@ import {
   experimental_useSidebarThreads as useSidebarThreads,
   type PluginSidebarThread,
   type PluginThreadListProps,
-} from "@get-bb/plugin-sdk/app";
+} from "@riftlabs/plugin-sdk/app";
 import { Icon } from "./components/Icon";
 import { cn } from "./lib/utils";
 import {
@@ -40,7 +40,7 @@ export function ThreadInbox({
   activeThreadId,
   onNavigate,
   searchQuery,
-}: PluginThreadListProps) {
+}: Omit<PluginThreadListProps, "Original">) {
   const { status, threads, projects } = useSidebarThreads();
   const actions = useSidebarThreadActions();
   const lifecycle = useLifecycle(threads);

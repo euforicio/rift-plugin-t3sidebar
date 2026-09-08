@@ -7,14 +7,17 @@ import {
   waitFor,
   within,
 } from "@testing-library/react";
-import { loadPluginApp, renderSlot } from "@get-bb/plugin-sdk/testing/app";
-import type { PluginSidebarThread } from "@get-bb/plugin-sdk";
+import { loadPluginApp, renderSlot } from "@riftlabs/plugin-sdk/testing/app";
+import type { PluginSidebarThread } from "@riftlabs/plugin-sdk";
 
-// Load through the harness so the plugin's `@get-bb/plugin-sdk/app` import binds
+// Load through the harness so the plugin's `@riftlabs/plugin-sdk/app` import binds
 // to the test runtime; importing the component directly would bind it to an
 // empty runtime first.
 const app = await loadPluginApp(() => import("../app"));
-const inbox = app.threadLists[0]!;
+const inbox = {
+  ...app.threadLists[0]!,
+  component: (await import("./ThreadInbox")).ThreadInbox,
+};
 
 function thread(
   overrides: Partial<PluginSidebarThread> = {},

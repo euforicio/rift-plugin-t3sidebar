@@ -7,7 +7,7 @@ This plugin started as an example in the BB repository. Install its public
 release from GitHub:
 
 ```sh
-bb plugin install git:https://github.com/SawyerHood/bb-plugin-t3sidebar.git@^0.1.0
+rift plugin install git:https://github.com/SawyerHood/bb-plugin-t3sidebar.git@^0.1.0
 ```
 
 Turn it on in **Settings → Appearance → Sidebar**. bb's own list stays the
@@ -95,3 +95,7 @@ parked.** bb has more kinds of live work than a session status — workflows,
 background agents, background commands, plan mode, goals — and every one of
 them blocks parking and wakes a parked thread. Hiding running work is the one
 failure this feature cannot afford. See `canPark` in `src/lifecycle.ts`.
+
+## Rift fork
+
+Maintained for Rift. Original source and credit: [SawyerHood/bb-plugin-t3sidebar](https://github.com/SawyerHood/bb-plugin-t3sidebar). Original licensing and attribution are preserved. Use `npm ci` and `npm run build`; the pinned SDK artifact is documented in [vendor/README.md](vendor/README.md).
